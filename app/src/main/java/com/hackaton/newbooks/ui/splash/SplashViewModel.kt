@@ -18,7 +18,7 @@ class SplashViewModel @Inject constructor(): BaseViewModel() {
         //TODO перекидывать на нужный экран
         viewModelScope.launch {
             delay(3000)
-            navigateToFragment.startEvent(FragmentTransaction(R.id.action_splashFragment_to_homeFragment))
+            navigateToFragment.startEvent(FragmentTransaction(R.id.action_splashFragment_to_loginFragment))
         }
     }
 }

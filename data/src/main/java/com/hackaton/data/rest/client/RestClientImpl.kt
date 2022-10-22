@@ -1,5 +1,6 @@
 package com.hackaton.data.rest.client
 
+import com.hackaton.data.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import com.hackaton.data.rest.api.AuthApi
@@ -24,7 +25,7 @@ class RestClientImpl : RestClient {
 
     init {
         this.retrofit = Retrofit.Builder()
-            .baseUrl("todo")
+            .baseUrl("https://icons8.ru/")
             .addCallAdapterFactory(ResultCallAdapterFactory())
             .addConverterFactory(GsonConverterFactory.create())
             .client(httpClient.build())

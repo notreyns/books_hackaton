@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:paddingBottom="100dp">
+
+            <TextView
+                android:layout_marginTop="100dp"
+                android:id="@+id/title"
+                style="@style/titleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/login"
+                android:gravity="center_horizontal"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/inter_medium"
+                android:text="Введите свои данные для входа"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:gravity="center_horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/title" />
+
+            <TextView
+                android:id="@+id/login_textview"
+                style="@style/title_for_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Логин"
+                app:layout_constraintTop_toBottomOf="@+id/subtitle" />
+
+            <EditText
+                android:id="@+id/name_edittext"
+                style="@style/registrationEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:hint="Введите логин"
+                android:imeOptions="actionNext"
+                app:layout_constraintTop_toBottomOf="@id/login_textview" />
+
+            <TextView
+                android:id="@+id/password_textview"
+                style="@style/title_for_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Пароль"
+                app:layout_constraintTop_toBottomOf="@+id/name_edittext" />
+
+            <EditText
+                android:id="@+id/password_edittext"
+                style="@style/registrationEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:inputType="textPassword"
+                android:hint="Введите 6-значный пароль"
+                android:imeOptions="actionDone"
+                app:layout_constraintTop_toBottomOf="@id/password_textview" />
+            
+            <Button
+                android:id="@+id/submit_btn"
+                android:text="Войти"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@+id/password_edittext"
+                style="@style/MainButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

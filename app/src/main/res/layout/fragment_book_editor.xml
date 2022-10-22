@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="5dp"
+            android:src="@drawable/ic_arrow_back" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:paddingBottom="100dp">
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/titleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Новая книга"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/inter_medium"
+                android:text="Добавление книги в каталог"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@+id/title" />
+
+            <TextView
+                android:id="@+id/name_textview"
+                style="@style/title_for_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Заголовок"
+                app:layout_constraintTop_toBottomOf="@+id/subtitle" />
+
+            <EditText
+                android:imeOptions="actionNext"
+                android:id="@+id/name_edittext"
+                style="@style/registrationEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:hint="Название книги"
+                app:layout_constraintTop_toBottomOf="@id/name_textview" />
+
+            <TextView
+                android:id="@+id/author_textview"
+                style="@style/title_for_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Автор"
+                app:layout_constraintTop_toBottomOf="@+id/name_edittext" />
+
+            <EditText
+                android:imeOptions="actionNext"
+                android:id="@+id/author_edittext"
+                style="@style/registrationEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:hint="Введите имя автора"
+                app:layout_constraintTop_toBottomOf="@id/author_textview" />
+
+            <TextView
+                android:id="@+id/description_textview"
+                style="@style/title_for_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Описание книги"
+                app:layout_constraintTop_toBottomOf="@+id/author_edittext" />
+
+            <LinearLayout
+                android:id="@+id/phone_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/edittext_background"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingVertical="12dp"
+                android:paddingHorizontal="16dp"
+                app:layout_constraintTop_toBottomOf="@id/description_textview">
+
+                <EditText
+                    android:inputType="textMultiLine"
+                    android:lines="3"
+                    android:textAppearance="@style/regular_input"
+                    android:paddingStart="4dp"
+                    android:paddingVertical="12dp"
+                    android:background="@android:color/transparent"
+                    android:imeOptions="actionNext"
+                    android:id="@+id/phone_edittext"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:hint="Краткое описание книги"
+                    android:gravity="top"
+                    app:layout_constraintTop_toBottomOf="@id/author_textview" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/category_textview"
+                style="@style/title_for_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Категория"
+                app:layout_constraintTop_toBottomOf="@+id/phone_ll" />
+
+            <LinearLayout
+                android:id="@+id/category_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/edittext_background"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingVertical="12dp"
+                android:paddingHorizontal="16dp"
+                app:layout_constraintTop_toBottomOf="@id/category_textview">
+
+                <TextView
+                    android:paddingVertical="12dp"
+                    android:id="@+id/birthday_input"
+                    android:textAppearance="@style/regular_input"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:hint="Выберите категорию"
+                    app:layout_constraintTop_toBottomOf="@id/category_textview" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_dropdown" />
+            </LinearLayout>
+
+          <!--  <TextView
+                android:id="@+id/sex_textview"
+                style="@style/title_for_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/gender"
+                app:layout_constraintTop_toBottomOf="@+id/category_ll" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/sex_textview">
+
+                <RadioButton
+                    android:id="@+id/radioMale"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/custom_radio_button"
+                    android:button="@null"
+                    tools:checked="false"
+                    android:gravity="center"
+                    android:paddingHorizontal="20dp"
+                    android:text="@string/man_ru"
+                    android:textColor="@color/radio_custom_text_colors"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/radioFemale"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/custom_radio_button"
+                    android:button="@null"
+                    tools:checked="true"
+                    android:gravity="center"
+                    android:text="@string/woman_ru"
+                    android:textColor="@color/radio_custom_text_colors"
+                    android:textSize="16sp" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/children_textview"
+                style="@style/title_for_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="@string/children_question"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <LinearLayout
+                android:id="@+id/child_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/edittext_background"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingVertical="12dp"
+                android:paddingHorizontal="16dp"
+                app:layout_constraintTop_toBottomOf="@id/children_textview">
+
+                <CheckBox
+                    android:id="@+id/children_checkbox"
+                    tools:checked="false"
+                    android:buttonTint="@android:color/transparent"
+                    android:buttonTintMode="src_over"
+                    android:button="@drawable/custom_checkbox"
+                    android:textAppearance="@style/regular_input"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingStart="12dp"
+                    android:text="@string/i_have_children" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_child" />
+            </LinearLayout>
+
+            <CheckBox
+                android:buttonTint="@android:color/transparent"
+                android:buttonTintMode="src_over"
+                android:button="@drawable/custom_checkbox"
+                tools:checked="true"
+                android:textAppearance="@style/regular_input"
+                android:textSize="14sp"
+                android:layout_marginTop="30dp"
+                android:id="@+id/agreement_checkbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="12dp"
+                android:text="@string/agreement"
+                app:layout_constraintTop_toBottomOf="@id/child_ll" />
+            <Button
+                app:layout_constraintTop_toBottomOf="@+id/agreement_checkbox"
+                android:enabled="false"
+                android:id="@+id/next_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/next"/>-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.hackaton.newbooks.ui.catalog
+package com.hackaton.newbooks.ui.student
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,19 +9,20 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.CreateMethod
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.hackaton.newbooks.R
-import com.hackaton.newbooks.databinding.FragmentCatalogBinding
+import com.hackaton.newbooks.databinding.FragmentMyBooksBinding
 import com.hackaton.newbooks.ui.base.BaseFragment
-import com.hackaton.newbooks.ui.catalog.adapter.BooksAdapter
+import com.hackaton.newbooks.ui.student.adapter.ReservedItemsAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
+
 @AndroidEntryPoint
-class CatalogFragment : BaseFragment() {
+class MyBooksFragment: BaseFragment() {
 
-    private val binding: FragmentCatalogBinding by viewBinding(createMethod = CreateMethod.INFLATE)
-    private val viewModel: CatalogViewModel by viewModels()
+    private val binding: FragmentMyBooksBinding by viewBinding(createMethod = CreateMethod.INFLATE)
 
+    private val viewModel: MyBooksViewModel by viewModels()
 
-    private val adapter by lazy { BooksAdapter() }
+    private val adapter by lazy { ReservedItemsAdapter() }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,28 +32,23 @@ class CatalogFragment : BaseFragment() {
         return binding.root
     }
 
-    override fun obtainViewModel() = viewModel
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setRecyclerView()
-        setOnClickListeners()
         setOnLiveDataListeners()
     }
 
     private fun setOnLiveDataListeners() {
         viewModel.items.observe(viewLifecycleOwner){
             adapter.addItems(it)
+            binding.subtitle.text = getString(R.string.available_books_count, 5 - it.size)
         }
-    }
-
-
-    private fun setOnClickListeners() {
-
     }
 
     private fun setRecyclerView() {
         binding.recyclerview.adapter = adapter
         binding.recyclerview.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
     }
+
+    override fun obtainViewModel() = viewModel
 }

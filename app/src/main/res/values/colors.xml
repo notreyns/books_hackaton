@@ -8,6 +8,20 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="main_blue">#0929CF</color>
-
+    <color name="main_color">#0929CF</color>
     <color name="background_color">@color/white</color>
+
+    <color name="input_field">#FAFAFA</color>
+    <color name="input_stroke">#F0F0F0</color>
+    <color name="gray">#7E8499</color>
+    <color name="red">#E21D23</color>
+    <color name="divider_color">#F7F7F8</color>
+    <color name="dark_grey">#56546E</color>
+    <color name="light_blue">#F5F7FF</color>
+    <color name="stroke_light_blue">#F0F3FF</color>
+    <color name="crossed_out_text_color">#AEAEAE</color>
+    <color name="hint_color">#7E8499</color>
+    <color name="light_brown">#F5F5F5</color>
+    <color name="disabled_black">#4D000000</color>
+    <color name="green">#4AED50</color>
 </resources>

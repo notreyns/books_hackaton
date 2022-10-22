@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/student"
+    app:startDestination="@id/myBooksFragment">
+
+    <fragment
+        android:id="@+id/catalogFragment"
+        android:name="com.hackaton.newbooks.ui.catalog.CatalogFragment"
+        android:label="CatalogFragment" />
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.hackaton.newbooks.ui.favorites.FavoritesFragment"
+        android:label="FavoritesFragment" />
+    <fragment
+        android:id="@+id/myBooksFragment"
+        android:name="com.hackaton.newbooks.ui.student.MyBooksFragment"
+        android:label="fragment_my_books"
+        tools:layout="@layout/fragment_my_books" />
+</navigation>

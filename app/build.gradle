@@ -57,14 +57,27 @@ dependencies {
     implementation project(':data')
     implementation project(':domain')
 
-    implementation "androidx.core:core-ktx:$coreKtxVersion"
-    implementation "androidx.appcompat:appcompat:${appcompatVersion}"
-    implementation "com.google.android.material:material:${materialDesignVersion}"
-    implementation "androidx.constraintlayout:constraintlayout:${androidConstraintLayoutVersion}"
-    implementation "androidx.navigation:navigation-ui-ktx:${navigationVersion}"
-    implementation "androidx.navigation:navigation-fragment-ktx:${navigationVersion}"
-    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
-    implementation "com.google.dagger:hilt-android:$hilt_version"
-    implementation "androidx.hilt:hilt-lifecycle-viewmodel:${hiltLifecycleViewModelVersion}"
-    implementation "com.github.kirich1409:viewbindingpropertydelegate:${viewBindingDelegateVersion}"
+    implementation kotlinDependencies.coreKtx
+
+    implementation platform(firebaseDependencies.firebaseBom)
+    implementation firebaseDependencies.firebase
+    implementation firebaseDependencies.auth
+
+    implementation presentationDependencies.appcompat
+    implementation presentationDependencies.materialDesign
+    implementation presentationDependencies.androidConstraintLayout
+    implementation presentationDependencies.navigationUI
+    implementation presentationDependencies.navigationFragment
+    kapt presentationDependencies.hiltCompiler
+    implementation presentationDependencies.daggerHilt
+    implementation presentationDependencies.hiltLifecycleViewModel
+    implementation presentationDependencies.viewBindingDelegate
+    implementation presentationDependencies.roundedImageView
+    implementation presentationDependencies.libPhoneNumber
+    implementation presentationDependencies.otpPinView
+    implementation presentationDependencies.glide
+    kapt presentationDependencies.glideCompiler
+    implementation presentationDependencies.smartTabLayout
+    implementation presentationDependencies.smartTabLayoutUtils
+
 }

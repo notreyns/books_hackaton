@@ -39,7 +39,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupNavigation() {
         initNavController()
-        NavigationUI.setupWithNavController(binding.bottomNavigationView, navigation)
     }
 
     private fun initNavController() {
